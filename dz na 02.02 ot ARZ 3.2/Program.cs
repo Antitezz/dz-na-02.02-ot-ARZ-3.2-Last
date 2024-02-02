@@ -4,8 +4,7 @@ class Base
 {
     static void Main()
     {
-        Console.WriteLine("Note: ALWAYS answer with lower case letters");
-        Console.WriteLine("Do you want to have randomly generated values in array?");
+        Console.WriteLine("Нужно ли вам случайно сгенерировать значения в массиве?");
         string getCreationType = Console.ReadLine();
         bool consoleValues = false;
         if (getCreationType == "no")
@@ -14,15 +13,15 @@ class Base
         }
         ArrayBase[] arrayBase = new ArrayBase[3];
         arrayBase[0] = new OneDimensional(consoleValues);
-        arrayBase[1] = new TwoDimension(consoleValues);
-        arrayBase[2] = new ManyDimension(consoleValues);
+        arrayBase[1] = new TwoDimensional(consoleValues);
+        arrayBase[2] = new StepArray(consoleValues);
         for (int i = 0; i<arrayBase.Length; i++)
         {
-            arrayBase[i].Average();
+            arrayBase[i].middleValue();
             arrayBase[i].Print();
             Console.WriteLine();
         }
-        arrayBase[1].Recreate(consoleValues);
+        arrayBase[1].CreateAgain(consoleValues);
         arrayBase[1].Print();
     }
 }
